@@ -2,7 +2,7 @@
 using CrossCutting.Utils;
 using MediatR;
 
-namespace Application.Addresses.Queries.GetAllByCustomer
+namespace Application.Addresses.Queries.GetAllAddressByCustomer
 {
     public class GetAllAddressByCustomerQuery : IRequest<Result<List<AddressReponse>>>
     {

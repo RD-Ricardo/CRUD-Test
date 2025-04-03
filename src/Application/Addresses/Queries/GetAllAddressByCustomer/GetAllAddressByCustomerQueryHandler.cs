@@ -4,7 +4,7 @@ using CrossCutting.Utils;
 using Domain.Repositories;
 using MediatR;
 
-namespace Application.Addresses.Queries.GetAllByCustomer
+namespace Application.Addresses.Queries.GetAllAddressByCustomer
 {
     public class GetAllAddressByCustomerQueryHandler : IRequestHandler<GetAllAddressByCustomerQuery, Result<List<AddressReponse>>>
     {
@@ -20,9 +20,6 @@ namespace Application.Addresses.Queries.GetAllByCustomer
         public async Task<Result<List<AddressReponse>>> Handle(GetAllAddressByCustomerQuery request, CancellationToken cancellationToken)
         {
             var addresses = await _addressRepository.GetByCustomerIdAsync(request.CustomerId, cancellationToken);
-
-            if (addresses is null)
-                return Result<List<AddressReponse>>.Failure(ErrorCatalog.NoAddressesFound);
 
             var addressResponses = _mapper.Map<List<AddressReponse>>(addresses);
 
