@@ -19,7 +19,7 @@ Antes de começar, certifique-se de ter instalado:
 ### 1️⃣ Clonar o repositório
 ```sh
 git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+cd CRUD-Test
 ```
 
 ### Comando docker
