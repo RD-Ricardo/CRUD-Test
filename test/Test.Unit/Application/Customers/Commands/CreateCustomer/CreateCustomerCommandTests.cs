@@ -6,7 +6,7 @@ namespace Test.Unit.Application.Customers.Commands.CreateCustomer
     public class CreateCustomerCommandTests
     {
         [Fact]
-        public void CreateCustomerCommand_ValidDAta_Valid()
+        public void CreateCustomerCommand_ValidData_Valid()
         {
 
             // Arrange
