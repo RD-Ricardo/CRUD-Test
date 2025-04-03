@@ -1,5 +1,6 @@
 ﻿using Application.Customers.Commands.CreateCustomer;
 using Application.Mappers;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application
@@ -14,6 +15,12 @@ namespace Application
             {
                 cfg.AddProfile<AddressProfile>();
             });
+
+            services.AddValidatorsFromAssemblies(new[]
+            {
+                typeof(CreateCustomerCommand).Assembly
+            });
+
 
             return services;
         }

@@ -2,6 +2,7 @@
 {
     public class AddressReponse
     {
+        public Guid Id { get; set; }
         public string Street { get; set; } = null!;
         public string Number { get; set; } = null!;
         public string? Complement { get; set; }

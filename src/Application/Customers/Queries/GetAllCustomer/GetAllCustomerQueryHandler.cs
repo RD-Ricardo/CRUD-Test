@@ -23,7 +23,9 @@ namespace Application.Customers.Queries.GetAllCustomer
                 Name = c.Name,
                 Email = c.Email,
                 Document = c.Document,
-                DocumentType = c.DocumentType
+                DocumentType = c.DocumentType,
+                CreatedAt = c.CreatedAt,
+                UpdatedAt = c.UpdatedAt
             });
 
             return Result<List<CustomerResponse>>.Success(response.ToList());

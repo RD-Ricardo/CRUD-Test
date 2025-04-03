@@ -12,7 +12,8 @@ namespace Application.Mappers
         {
             CreateMap<CreateAddressCommand, Address>()
                 .ForMember(dest => dest.CustomerId, opt => opt.Ignore())
-                .ForMember(dest => dest.Customer, opt => opt.Ignore());
+                .ForMember(dest => dest.Customer, opt => opt.Ignore())
+                .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => DateTime.UtcNow));
 
             CreateMap<UpdateAddressCommand, Address>();
 

@@ -27,7 +27,9 @@ namespace Application.Customers.Queries.GetCustomer
                 Name = customer.Name,
                 Email = customer.Email,
                 Document = customer.Document,
-                DocumentType = customer.DocumentType
+                DocumentType = customer.DocumentType,
+                CreatedAt = customer.CreatedAt,
+                UpdatedAt = customer.UpdatedAt
             };
 
             return Result<CustomerResponse>.Success(response);
