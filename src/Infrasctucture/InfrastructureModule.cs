@@ -1,13 +1,13 @@
 ﻿using Domain.Repositories;
-using Infrasctucture.Database;
 using Infrasctucture.Database.Repositories;
+using Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Infrasctucture
+namespace Infrastructure
 {
-    public static class InfrasctuctureModule
+    public static class InfrastructureModule
     {
         public static IServiceCollection AddInfrasctucture(this IServiceCollection services, IConfiguration configuration)
         {

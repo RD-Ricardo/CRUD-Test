@@ -2,7 +2,7 @@
 using Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrasctucture.Database
+namespace Infrastructure.Database
 {
     public class ApplicationDbContext : DbContext, IUnitOfWork
     {

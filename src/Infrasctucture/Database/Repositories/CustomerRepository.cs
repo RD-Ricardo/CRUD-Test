@@ -2,7 +2,7 @@
 using Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrasctucture.Database.Repositories
+namespace Infrastructure.Database.Repositories
 {
     public class CustomerRepository : ICustomerRepository
     {
