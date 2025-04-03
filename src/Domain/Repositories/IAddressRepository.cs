@@ -4,10 +4,11 @@ namespace Domain.Repositories
 {
     public interface IAddressRepository
     {
-        Task<List<Address>> GetByCustomerIdAsync(Guid customerId);
-        Task AddAsync(Address address);
-        void Update(Address address);
-        void Delete(Address address);
+        Task<Address?> GetByIdAsync(Guid addressId, CancellationToken cancellationToken);
+        Task<List<Address>> GetByCustomerIdAsync(Guid customerId, CancellationToken cancellationToken);
+        Task AddAsync(Address address, CancellationToken cancellationToken);
+        void Update(Address address, CancellationToken cancellationToken);
+        void Delete(Address address, CancellationToken cancellationToken);
         IUnitOfWork UnitOfWork { get; }
     }
 }
