@@ -13,7 +13,7 @@
         public DateTime CreatedAt { get; private set; }
         public DateTime? UpdatedAt { get; private set; }
 
-        public void Update()
+        public void UpdateAt()
         {
             UpdatedAt = DateTime.UtcNow;
         }
