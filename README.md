@@ -27,3 +27,8 @@ cd CRUD-Test
 docker-compose -f docker/docker-compose.yml up --build
 ```
 
+### Acesse 
+```sh
+http://localhost:8080/swagger/index.html
+```
+
