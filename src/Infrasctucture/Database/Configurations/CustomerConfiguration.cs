@@ -20,11 +20,6 @@ namespace Infrastructure.Database.Configurations
 
             builder.HasIndex(c => c.Email)
                 .IsUnique();
-
-            builder.HasMany(c => c.Addresses)
-                .WithOne()
-                .HasForeignKey(a => a.CustomerId)
-                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }
