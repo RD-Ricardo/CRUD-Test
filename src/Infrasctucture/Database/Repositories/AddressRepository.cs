@@ -14,22 +14,31 @@ namespace Infrastructure.Database.Repositories
 
         public IUnitOfWork UnitOfWork => _context;
 
-        public Task<List<Address>> GetByCustomerIdAsync(Guid customerId)
+        public Task<List<Address>> GetByCustomerIdAsync(Guid customerId, CancellationToken cancellationToken)
         {
-            return _context.Addresses.Where(a => a.CustomerId == customerId).ToListAsync();
+            return _context.Addresses
+                .Include(a => a.Customer)
+                .Where(a => a.CustomerId == customerId)
+                .ToListAsync(cancellationToken);
+        }
+        public Task<Address?> GetByIdAsync(Guid addressId, CancellationToken cancellationToken)
+        {
+            return _context.Addresses
+                .Include(a => a.Customer)
+                .FirstOrDefaultAsync(a => a.Id == addressId, cancellationToken);
         }
 
-        public async Task AddAsync(Address address)
+        public async Task AddAsync(Address address, CancellationToken cancellationToken)
         {
-            await _context.Addresses.AddAsync(address);
+            await _context.Addresses.AddAsync(address, cancellationToken);
         }
 
-        public void Delete(Address address)
+        public void Delete(Address address, CancellationToken cancellationToken)
         {
             _context.Remove(address);
         }
 
-        public void Update(Address address)
+        public void Update(Address address, CancellationToken cancellationToken)
         {
             _context.Update(address);
         }

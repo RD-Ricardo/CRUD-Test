@@ -1,6 +1,6 @@
 ﻿using Domain.Repositories;
-using Infrasctucture.Database.Repositories;
 using Infrastructure.Database;
+using Infrastructure.Database.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
