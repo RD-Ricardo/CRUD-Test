@@ -11,10 +11,9 @@ namespace Infrastructure
     {
         public static IServiceCollection AddInfrasctucture(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-            {
-                options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
-            });
+            var connectionString = configuration.GetConnectionString("DefaultConnection");
+
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<IAddressRepository, AddressRepository>();
