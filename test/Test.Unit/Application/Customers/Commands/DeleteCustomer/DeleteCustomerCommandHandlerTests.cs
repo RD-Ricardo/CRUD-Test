@@ -39,7 +39,7 @@ namespace Test.Unit.Application.Customers.Commands.DeleteCustomer
             // Assert
             Assert.NotNull(result);
             Assert.True(result.IsSuccess);
-            Assert.IsType<Unit>(result.Data);
+            Assert.IsType<MediatR.Unit>(result.Data);
             _customerRepository.Verify(x => x.GetByIdAsync(customerId, default), Times.Once);
             _customerRepository.Verify(x => x.Delete(customer, default), Times.Once);
             _customerRepository.Verify(x => x.UnitOfWork.Commit(), Times.Once);
@@ -71,7 +71,7 @@ namespace Test.Unit.Application.Customers.Commands.DeleteCustomer
             // Assert
             Assert.NotNull(result);
             Assert.False(result.IsSuccess);
-            Assert.IsType<Unit>(result.Data);
+            Assert.IsType<MediatR.Unit>(result.Data);
             _customerRepository.Verify(x => x.GetByIdAsync(customerId, default), Times.Once);
             _customerRepository.Verify(x => x.Delete(customer, default), Times.Never);
             _customerRepository.Verify(x => x.UnitOfWork.Commit(), Times.Never);
