@@ -10,4 +10,12 @@
             Type = type;
         }
     }
+
+    public enum ErrorTypeEnum
+    {
+        NotFound = 0,
+        BadRequest = 1,
+        Validation = 2,
+        InternalServerError = 3
+    }
 }
