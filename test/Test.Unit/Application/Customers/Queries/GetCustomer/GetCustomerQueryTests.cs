@@ -3,7 +3,7 @@ using CrossCutting.Utils;
 using FluentValidation;
 using MediatR;
 
-namespace Application.Customers.Queries.GetCustomer
+namespace Test.Unit.Application.Customers.Queries.GetCustomer
 {
     public class GetCustomerQueryTests : IRequest<Result<CustomerResponse>>
     {

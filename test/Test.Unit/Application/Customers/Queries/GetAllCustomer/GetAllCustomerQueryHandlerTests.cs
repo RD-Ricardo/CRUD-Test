@@ -1,9 +1,9 @@
-﻿using Application.Customers.Queries.Models;
+﻿using Application.Customers.Queries.GetAllCustomer;
+using Application.Customers.Queries.Models;
 using Domain.Repositories;
 using Moq;
-using Test.Unit.Application.Customers;
 
-namespace Application.Customers.Queries.GetAllCustomer
+namespace Test.Unit.Application.Customers.Queries.GetAllCustomer
 {
     public class GetAllCustomerQueryHandlerTests
     {

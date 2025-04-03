@@ -1,10 +1,9 @@
-﻿using Domain.Entities;
+﻿using Application.Customers.Commands.DeleteCustomer;
+using Domain.Entities;
 using Domain.Repositories;
-using MediatR;
 using Moq;
-using Test.Unit.Application.Customers;
 
-namespace Application.Customers.Commands.DeleteCustomer
+namespace Test.Unit.Application.Customers.Commands.DeleteCustomer
 {
     public class DeleteCustomerCommandHandlerTests
     {

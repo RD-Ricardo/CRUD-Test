@@ -1,6 +1,7 @@
-﻿using Domain.Enums;
+﻿using Application.Customers.Commands.CreateCustomer;
+using Domain.Enums;
 
-namespace Application.Customers.Commands.CreateCustomer
+namespace Test.Unit.Application.Customers.Commands.CreateCustomer
 {
     public class CreateCustomerCommandTests
     {

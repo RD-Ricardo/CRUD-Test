@@ -1,4 +1,6 @@
-﻿namespace Application.Customers.Commands.DeleteCustomer
+﻿using Application.Customers.Commands.DeleteCustomer;
+
+namespace Test.Unit.Application.Customers.Commands.DeleteCustomer
 {
     public class DeleteCustomerCommandTests
     {

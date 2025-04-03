@@ -1,10 +1,10 @@
-﻿using Application.Customers.Queries.Models;
+﻿using Application.Customers.Queries.GetCustomer;
+using Application.Customers.Queries.Models;
 using Domain.Entities;
 using Domain.Repositories;
 using Moq;
-using Test.Unit.Application.Customers;
 
-namespace Application.Customers.Queries.GetCustomer
+namespace Test.Unit.Application.Customers.Queries.GetCustomer
 {
     public class GetCustomerQueryHandlerTests
     {

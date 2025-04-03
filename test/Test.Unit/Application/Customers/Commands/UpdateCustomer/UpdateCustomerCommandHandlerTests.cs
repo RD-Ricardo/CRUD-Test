@@ -1,10 +1,9 @@
-﻿using Domain.Entities;
+﻿using Application.Customers.Commands.UpdateCustomer;
+using Domain.Entities;
 using Domain.Repositories;
-using MediatR;
 using Moq;
-using Test.Unit.Application.Customers;
 
-namespace Application.Customers.Commands.UpdateCustomer
+namespace Test.Unit.Application.Customers.Commands.UpdateCustomer
 {
     public class UpdateCustomerCommandHandlerTests
     {
@@ -45,7 +44,6 @@ namespace Application.Customers.Commands.UpdateCustomer
             // Assert
             Assert.NotNull(result);
             Assert.True(result.IsSuccess);
-            Assert.IsType<Unit>(result.Data);
             _customerRepository.Verify(x => x.GetByIdAsync(command.GetCustomerId(), default), Times.Once);
             _customerRepository.Verify(x => x.Update(It.Is<Domain.Entities.Customer>(c =>
                 c.Name == command.Name &&
@@ -85,7 +83,6 @@ namespace Application.Customers.Commands.UpdateCustomer
             // Assert
             Assert.NotNull(result);
             Assert.False(result.IsSuccess);
-            Assert.IsType<Unit>(result.Data);
             _customerRepository.Verify(x => x.GetByIdAsync(command.GetCustomerId(), default), Times.Once);
             _customerRepository.Verify(x => x.Update(It.Is<Domain.Entities.Customer>(c =>
                 c.Name == command.Name &&

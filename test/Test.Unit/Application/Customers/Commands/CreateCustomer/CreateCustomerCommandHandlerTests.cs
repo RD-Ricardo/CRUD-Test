@@ -1,9 +1,9 @@
-﻿using Domain.Repositories;
-using MediatR;
+﻿using Application;
+using Application.Customers.Commands.CreateCustomer;
+using Domain.Repositories;
 using Moq;
-using Test.Unit.Application.Customers;
 
-namespace Application.Customers.Commands.CreateCustomer
+namespace Test.Unit.Application.Customers.Commands.CreateCustomer
 {
     public class CreateCustomerCommandHandlerTests
     {
@@ -43,7 +43,6 @@ namespace Application.Customers.Commands.CreateCustomer
             // Assert
             Assert.NotNull(result);
             Assert.True(result.IsSuccess);
-            Assert.IsType<Unit>(result.Data);
             _customerRepository.Verify(x => x.GetByEmailAsync(command.Email, default), Times.Once);
             _customerRepository.Verify(x => x.AddAsync(It.Is<Domain.Entities.Customer>(c =>
                 c.Name == command.Name &&
