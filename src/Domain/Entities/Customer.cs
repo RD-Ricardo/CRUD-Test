@@ -22,7 +22,7 @@ namespace Domain.Entities
         {
             Name = name;
             Email = email;
-            Update();
+            UpdateAt();
         }
     }
 }

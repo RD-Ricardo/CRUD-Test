@@ -6,7 +6,7 @@ namespace Domain.Entities
     {
         public string Street { get; set; } = null!;
         public string Number { get; set; } = null!;
-        public string Complement { get; set; } = null!;
+        public string? Complement { get; set; }
         public string ZipCode { get; set; } = null!;
         public string City { get; set; } = null!;
         public string State { get; set; } = null!;
