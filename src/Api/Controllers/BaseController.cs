@@ -21,16 +21,21 @@ namespace Api.Controllers
 
             var firstError = result.Errors.First();
 
+            var messageError = new
+            {
+                firstError.Message,
+            };
+
             return firstError.Type switch
             {
-                ErrorTypeEnum.NotFound => new NotFoundObjectResult(firstError.Message),
-                ErrorTypeEnum.BadRequest => new BadRequestObjectResult(firstError.Message),
-                ErrorTypeEnum.Validation => new UnprocessableEntityObjectResult(firstError.Message),
-                ErrorTypeEnum.InternalServerError => new ObjectResult(firstError.Message)
+                ErrorTypeEnum.NotFound => new NotFoundObjectResult(messageError),
+                ErrorTypeEnum.BadRequest => new BadRequestObjectResult(messageError),
+                ErrorTypeEnum.Validation => new UnprocessableEntityObjectResult(messageError),
+                ErrorTypeEnum.InternalServerError => new ObjectResult(messageError)
                 {
                     StatusCode = StatusCodes.Status500InternalServerError
                 },
-                _ => new ObjectResult(firstError.Message)
+                _ => new ObjectResult(messageError)
                 {
                     StatusCode = StatusCodes.Status500InternalServerError
                 }
