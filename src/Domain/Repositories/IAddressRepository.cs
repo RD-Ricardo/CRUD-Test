@@ -4,12 +4,10 @@ namespace Domain.Repositories
 {
     public interface IAddressRepository
     {
-        Task<Address> GetAsync(Guid id);
-        Task<IEnumerable<Address>> GetByCustomerIdAsync(Guid customerId);
-        Task<IEnumerable<Address>> GetAllAsync();
+        Task<List<Address>> GetByCustomerIdAsync(Guid customerId);
         Task AddAsync(Address address);
-        Task UpdateAsync(Address address);
-        Task DeleteAsync(Address address);
+        void Update(Address address);
+        void Delete(Address address);
         IUnitOfWork UnitOfWork { get; }
     }
 }
